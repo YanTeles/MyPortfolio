@@ -13,7 +13,8 @@ header{
 }
 
 .profile-section {
-    margin-right: auto;
+    display: flex;
+    align-items: center;
 }
 
 nav {
@@ -22,13 +23,12 @@ nav {
 }
 
 .menu {
-    display: inline-flex;
+    display: flex;
     align-items: center;
     gap: 2rem;
 }
 
 .menu h2 {
-    display: inline-block;
     color: #fff;
     font-weight: 400;
     font-size: 0.9rem;
@@ -39,6 +39,8 @@ nav {
     transition: transform 0.3s ease;
     border-radius: 10px;
     opacity: 0.8;
+    display: inline-flex;
+    align-items: center;
 }
 
 .menu h2:hover {
@@ -68,14 +70,20 @@ nav {
     border-radius: 50%;
     object-fit: cover;
     flex-shrink: 0;
-    margin-right: 12rem;
-    
 }
 
 .icons {
-    width: 20px;
-    height: 20px;
+    width: 12px;
+    height: 12px;
     display: inline-block;
+    vertical-align: middle;
+    margin-right: 4px;
+}
+
+.icon-text-container {
+    display: inline-flex;
+    align-items: center;
+    line-height: normal;
 }
 
 .action-buttons {
@@ -103,3 +111,12 @@ nav {
     background-color: #6fd348;
     transform: translateY(-1px);
 }
+
+.home-icon {
+    width: 14px;
+    height: 14px;
+    margin-right: 4px;
+    vertical-align: middle;
+}
+
+
