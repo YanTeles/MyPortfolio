@@ -17,17 +17,18 @@ header{
 }
 
 nav {
+    display: inline-block;
     margin-left: auto;
 }
 
 .menu {
-    display: flex;
-    justify-content: flex-end;
+    display: inline-flex;
     align-items: center;
     gap: 2rem;
 }
 
 .menu h2 {
+    display: inline-block;
     color: #fff;
     font-weight: 400;
     font-size: 0.9rem;
