@@ -132,3 +132,17 @@ function setLanguage(lang) {
     // Update intro text
     document.querySelector('.left-content p').textContent = translations[lang].intro;
 }
+
+// Smooth scroll for About link
+document.addEventListener('DOMContentLoaded', () => {
+    const aboutLink = document.querySelector('.menu h2:nth-child(2)'); // Seleciona o link "About"
+    
+    aboutLink.addEventListener('click', (e) => {
+        e.preventDefault();
+        const aboutSection = document.getElementById('about');
+        aboutSection.scrollIntoView({ 
+            behavior: 'smooth',
+            block: 'start'
+        });
+    });
+});
