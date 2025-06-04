@@ -70,6 +70,12 @@ nav {
     border-radius: 50%;
     object-fit: cover;
     flex-shrink: 0;
+    border: 2px solid transparent;
+    transition: border-color 0.3s ease;
+}
+
+.avatar:hover {
+    border-color: var(--highlights);
 }
 
 .icons {
@@ -117,6 +123,46 @@ nav {
     height: 14px;
     margin-right: 4px;
     vertical-align: middle;
+}
+
+.settings {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.theme-toggle,
+.lang-toggle {
+    background: none;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 0.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.theme-toggle:hover,
+.lang-toggle:hover {
+    border-color: var(--highlights);
+    transform: translateY(-2px);
+}
+
+.theme-icon {
+    width: 20px;
+    height: 20px;
+}
+
+.lang-toggle {
+    padding: 0.5rem 1rem;
+}
+
+.lang-text {
+    color: var(--text-color);
+    font-size: 0.9rem;
+    font-weight: 500;
 }
 
 

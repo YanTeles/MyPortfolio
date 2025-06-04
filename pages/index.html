@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles/index.css">
     <link href="https://fonts.googleapis.com/css2?family=Comic+Relief:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.3/lottie.min.js"></script>
     <title>Portifólio</title>
 </head>
 
@@ -19,16 +20,52 @@
         <nav class="menu">
             <h2><img class="icons icon-text-container" src="../Images/Casa.png" alt="">Home</h2>
             <h2><img class="icons icon-text-container" src="../Images/sobre.png" alt="">Sobre</h2>
-            <h2><img class="icons icon-text-container" src="../Images/projetos.png" alt="">Projetos</h2>
             <h2><img class="icons icon-text-container" src="../Images/habilidades.png" alt="">Habilidades</h2>
-            <h2><img class="icons icon-text-container" src="../Images/contato.png" alt="">Contato</h2>
+            <h2><img class="icons icon-text-container" src="../Images/projetos.png" alt="">Projetos</h2>
+            <h2><img class="icons icon-text-container" src="../Images/contato1.png">Contato</h2>
         </nav>
+        <div class="settings">
+            <button id="themeToggle" class="theme-toggle">
+                <div id="theme-animation" class="theme-animation"></div>
+            </button>
+            <button id="langToggle" class="lang-toggle">
+                <span class="lang-text">EN</span>
+            </button>
+        </div>
     </header>
 
     <main>
-
+        <div class="content-wrapper">
+            <div class="left-content">
+                <h1>Desenvolvedor <span>Full-stack</span></h1>
+                <p>👋 Olá! Meu nome é Yan Caliel Pereira Teles, tenho 20 anos e sou estudante de Engenharia de Software pela Unileste. Sou apaixonado por tecnologia e estou sempre em busca de novos desafios que me permitam aprender, crescer e contribuir com soluções criativas e eficientes. Tenho perfil proativo, gosto de trabalhar em equipe e estou construindo minha trajetória como desenvolvedor com foco em boas práticas, aprendizado contínuo e impacto positivo através do código.</p>
+            </div>
+            <img src="../Images/avatar.png" alt="Foto de perfil">
+        </div>
     </main>
 
+    <section class="info-section" id="about">
+        <div class="container">
+            <h2>Minha Jornada</h2>
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>🌱 Crescimento</h3>
+                    <p>+1 Ano de evolução contínua com prática diária, cursos e desafios</p>
+                </div>
+                <div class="info-card">
+                    <h3>🧠 Aprendizado</h3>
+                    <p>Domínio em HTML, CSS, JS, SQL, Java, Git e Github </p>
+                </div>
+                <div class="info-card">
+                    <h3>🛠️ Fundamentos</h3>
+                    <p>Base sólida em lógica de programação e resolução de problemas</p>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <script src="../Script/script.js"></script>
 </body>
 
 </html>
