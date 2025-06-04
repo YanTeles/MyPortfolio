@@ -15,15 +15,92 @@
 }
 
 :root{
+    /* Dark theme (default) */
     --background: #0D1117;
-    --ff-header:"Jetbrains", system-ui, sans-serif; 
+    --surface: #1c2230;
+    --surface-lighter: #151922;
     --text-color: #FFFFFF;
+    --text-secondary: rgba(255, 255, 255, 0.9);
     --botons-color: #3B82F6;
     --highlights: #82ea5b;
+    --border-color: rgba(255, 255, 255, 0.1);
+    --ff-header: "Jetbrains", system-ui, sans-serif;
+    --card-bg: var(--surface);
+}
+
+:root.light-theme {
+    --background: #ffffff;
+    --surface: #f4f6f8;
+    --surface-lighter: #ffffff;
+    --text-color: #1a1a1a;
+    --text-secondary: #FFFFFF;
+    --highlights: #3B82F6;
+    --border-color: rgba(0, 0, 0, 0.1);
+    --card-bg: #1c2230; /* Mantendo a cor escura dos cards no modo claro */
+}
+
+body {
+    background-color: var(--background);
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .container{
     max-width: 1280px;
     padding-inline:32px ;
     margin-inline: auto;
+}
+
+/* Theme toggle styles */
+.theme-toggle {
+    position: relative;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.theme-animation {
+    width: 32px;
+    height: 32px;
+    pointer-events: none;
+}
+
+.theme-toggle:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
+
+.theme-icon {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.3s ease;
+}
+
+.theme-toggle:hover .theme-icon {
+    transform: scale(1.1);
+}
+
+#themeToggle {
+    border: none;
+    outline: none;
+}
+
+/* Estilos específicos para o título Journey e botão de linguagem */
+.info-section h2,
+.lang-toggle {
+    color: var(--text-secondary);
+}
+
+/* Garantir que o botão de linguagem mantenha a cor em ambos os temas */
+.lang-toggle .lang-text {
+    color: var(--text-secondary);
+}
+
+.info-card {
+    background-color: var(--card-bg);
+    transition: background-color 0.3s ease;
 }
