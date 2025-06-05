@@ -37,30 +37,237 @@
     <main>
         <div class="content-wrapper">
             <div class="left-content">
-                <h1>Desenvolvedor <span>Full-stack</span></h1>
+                <h1 class="animate-title">Desenvolvedor <span class="highlight-animate">Full-stack</span></h1>
                 <p>👋 Olá! Meu nome é Yan Caliel Pereira Teles, tenho 20 anos e sou estudante de Engenharia de Software pela Unileste. Sou apaixonado por tecnologia e estou sempre em busca de novos desafios que me permitam aprender, crescer e contribuir com soluções criativas e eficientes. Tenho perfil proativo, gosto de trabalhar em equipe e estou construindo minha trajetória como desenvolvedor com foco em boas práticas, aprendizado contínuo e impacto positivo através do código.</p>
             </div>
             <img src="../Images/avatar.png" alt="Foto de perfil">
         </div>
     </main>
 
-    <section class="info-section" id="about">
-        <div class="container">
-            <h2>Minha Jornada</h2>
-            <div class="info-grid">
-                <div class="info-card">
-                    <h3>🌱 Crescimento</h3>
-                    <p>+1 Ano de evolução contínua com prática diária, cursos e desafios</p>
+    <section class="about-card" id="about">
+        <div class="card-container">
+            <h2 class="card-title">Minha Jornada</h2>
+            <div class="card-content">
+                <div class="journey-item">
+                    <div class="journey-icon">🌱</div>
+                    <div class="journey-details">
+                        <h3>Crescimento</h3>
+                        <p>+1 Ano de evolução contínua com prática diária, cursos e desafios</p>
+                    </div>
                 </div>
-                <div class="info-card">
-                    <h3>🧠 Aprendizado</h3>
-                    <p>Domínio em HTML, CSS, JS, SQL, Java, Git e Github </p>
+                <div class="journey-item">
+                    <div class="journey-icon">🧠</div>
+                    <div class="journey-details">
+                        <h3>Aprendizado</h3>
+                        <p>Domínio em HTML, CSS, JS, SQL, Java, Git e Github</p>
+                    </div>
                 </div>
-                <div class="info-card">
-                    <h3>🛠️ Fundamentos</h3>
-                    <p>Base sólida em lógica de programação e resolução de problemas</p>
+                <div class="journey-item">
+                    <div class="journey-icon">🛠️</div>
+                    <div class="journey-details">
+                        <h3>Fundamentos</h3>
+                        <p>Base sólida em lógica de programação e resolução de problemas</p>
+                    </div>
                 </div>
-                
+            </div>
+        </div>
+    </section>
+
+    <section class="skills-section" id="skills">
+        <div class="skills-container">
+            <h2 class="section-title">Habilidades</h2>
+            <div class="skills-layout">
+                <div class="skills-showcase">
+                    <div class="main-skill">
+                        <button class="nav-arrow prev-arrow" aria-label="Previous skill">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                        <div class="skill-content active" data-skill="html">
+                            <img src="../Images/html2.png" alt="HTML5">
+                        </div>
+                        <div class="skill-content" data-skill="css">
+                            <img src="../Images/css2.png" alt="CSS3">
+                        </div>
+                        <div class="skill-content" data-skill="js">
+                            <img src="../Images/Js-2.png" alt="JavaScript">
+                        </div>
+                        <div class="skill-content" data-skill="java">
+                            <img src="../Images/java2.png" alt="Java">
+                        </div>
+                        <div class="skill-content" data-skill="git">
+                            <div class="dual-image-container">
+                                <img src="../Images/git2.png" alt="Git" class="dual-image">
+                            </div>
+                        </div>
+                        <div class="skill-content" data-skill="vscode">
+                            <div class="dual-image-container">
+                                <img src="../Images/visual2.png" alt="VS Code" class="dual-image">
+                            </div>
+                        </div>
+                        <div class="skill-content" data-skill="mysql">
+                            <img src="../Images/mysql2.png" alt="MySQL">
+                        </div>
+                        <button class="nav-arrow next-arrow" aria-label="Next skill">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="skills-thumbnails">
+                        <button class="thumb active" data-skill="html" style="--thumb-color: #E44D26">
+                            <img src="../Images/html.png" alt="HTML5">
+                        </button>
+                        <button class="thumb" data-skill="css" style="--thumb-color: #264DE4">
+                            <img src="../Images/css.png" alt="CSS3">
+                        </button>
+                        <button class="thumb" data-skill="js" style="--thumb-color: #F7DF1E">
+                            <img src="../Images/Js.png" alt="JavaScript">
+                        </button>
+                        <button class="thumb" data-skill="java" style="--thumb-color: #007396">
+                            <img src="../Images/java.png" alt="Java">
+                        </button>
+                        <button class="thumb" data-skill="git" style="--thumb-color: #F14E32">
+                            <div class="dual-image-container-small">
+                                <img src="../Images/git.png" alt="Git" class="dual-image-small">
+                            </div>
+                        </button>
+                        <button class="thumb" data-skill="vscode" style="--thumb-color: #007ACC">
+                            <div class="dual-image-container-small">
+                                <img src="../Images/visual.png" alt="VS Code" class="dual-image-small">
+                            </div>
+                        </button>
+                        <button class="thumb" data-skill="mysql" style="--thumb-color: #00758F">
+                            <img src="../Images/mysql.png" alt="MySQL">
+                        </button>
+                    </div>
+                </div>
+                <div class="skills-info">
+                    <div class="skill-details active" data-skill="html">
+                        <h3>HTML5</h3>
+                        <div class="skill-description">
+                            <p>HTML5 é a versão mais recente da linguagem de marcação HTML, fundamental para a criação de conteúdo na web. Suas inovações incluem suporte nativo para áudio e vídeo, novos elementos semânticos  e APIs para aplicações web interativas, tornando-o a base para páginas modernas e responsivas.</p>
+                            <ul>
+                                <li>SEO e boas práticas</li>
+                                <li>HTML5 Semântico</li>
+                                <li>Acessibilidade Web</li>
+                                <li>Formulários e Validação</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="skill-details" data-skill="css">
+                        <h3>CSS3</h3>
+                        <div class="skill-description">
+                            <p>CSS3 é a terceira versão das Cascading Style Sheets, usada para estilizar documentos HTML e XML. Ela introduziu módulos e funcionalidades que permitem designs web mais complexos e dinâmicos, como animações, transições, transformações, sombras, gradientes, bordas arredondadas e designs responsivos via Media Queries. Essencialmente, o CSS3 dá vida e estilo ao conteúdo HTML, controlando a aparência e a adaptabilidade visual de páginas web modernas.</p>
+                            <ul>
+                                <li>Flexbox e Grid</li>
+                                <li>Animações e Transições</li>
+                                <li>Design Responsivo</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="skill-details" data-skill="js">
+                        <h3>JavaScript</h3>
+                        <div class="skill-description">
+                            <p>JavaScript é uma linguagem de programação versátil e de alto nível, usada para tornar páginas web interativas. Além de adicionar comportamentos a sites, ela se expandiu para desenvolvimento de back-end , aplicações mobile, desktop e jogos, sendo uma das linguagens mais populares na web.</p>
+                            <ul>
+                                <li>ES6+</li>
+                                <li>DOM Manipulation</li>
+                                <li>Async/Await</li>
+                                <li>APIs REST</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="skill-details" data-skill="java">
+                        <h3>Java</h3>
+                        <div class="skill-description">
+                            <p>Java é uma linguagem de programação orientada a objetos e de alto nível, amplamente usada para desenvolver diversas aplicações. Sua filosofia "Escreva uma vez, execute em qualquer lugar" permite que o código compilado rode em qualquer plataforma com uma Java Virtual Machine. É essencial para aplicações corporativas, Android, big data, back-end, serviços web e IoT, destacando-se por sua robustez, segurança e portabilidade.</p>
+                            <ul>
+                                <li>Programação Orientada a Objetos</li>
+                                <li>Collections Framework</li>
+                                <li>Spring Boot</li>
+                                <li>JPA/Hibernate</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="skill-details" data-skill="git">
+                        <h3>Git & GitHub</h3>
+                        <div class="skill-description">
+                            <p>Controle de versão e colaboração em projetos de software. Gerenciamento eficiente de código-fonte, branches e resolução de conflitos, além de integração com ferramentas de CI/CD para desenvolvimento ágil.</p>
+                            <ul>
+                                <li>Controle de Versão Distribuído</li>
+                                <li>Branches e Merge Strategies</li>
+                                <li>Pull Requests e Code Review</li>
+                                <li>GitHub Actions e Workflows</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="skill-details" data-skill="vscode">
+                        <h3>Visual Studio Code</h3>
+                        <div class="skill-description">
+                            <p>Editor de código altamente personalizável e poderoso, com suporte a diversas linguagens e extensões que aumentam a produtividade no desenvolvimento.</p>
+                            <ul>
+                                <li>Debugging Avançado</li>
+                                <li>Extensões e Personalização</li>
+                                <li>Integração com Git</li>
+                                <li>Terminal Integrado</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="skill-details" data-skill="mysql">
+                        <h3>MySQL</h3>
+                        <div class="skill-description">
+                            <p>Sistema de gerenciamento de banco de dados relacional mais popular do mundo, utilizado para armazenamento e manipulação de dados em aplicações.</p>
+                            <ul>
+                                <li>Modelagem de Dados</li>
+                                <li>Queries Complexas</li>
+                                <li>Stored Procedures</li>
+                                <li>Otimização de Performance</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="projects-section" id="projects">
+        <div class="projects-container">
+            <h2 class="section-title">Projetos</h2>
+            <p class="section-description">Aqui estão alguns dos projetos que desenvolvi, demonstrando minhas habilidades e experiência em diferentes tecnologias.</p>
+            
+            <div class="projects-categories">
+                <button class="category-btn active" data-category="all">Todos</button>
+                <button class="category-btn" data-category="web">Web</button>
+                <button class="category-btn" data-category="mobile">Mobile</button>
+                <button class="category-btn" data-category="backend">Backend</button>
+            </div>
+
+            <div class="projects-grid">
+                <!-- Project Card Template -->
+                <article class="project-card" data-category="web">
+                    <div class="project-image">
+                        <div class="ribbon">Em Breve</div>
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link disabled">Ver Projeto</a>
+                                <a href="#" class="project-link disabled">Ver Código</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Portfolio Website</h3>
+                        <p>Um site portfolio moderno e responsivo construído com HTML, CSS e JavaScript.</p>
+                        <div class="project-tech">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Adicione mais cards de projeto aqui -->
             </div>
         </div>
     </section>
