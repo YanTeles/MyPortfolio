@@ -97,6 +97,21 @@ const translations = {
                     'Otimização de Performance'
                 ]
             }
+        },
+        footer: {
+            contact: {
+                title: 'Contato',
+                cta: 'Vamos trabalhar juntos? Entre em contato!'
+            },
+            location: {
+                title: 'Localização',
+                city: 'Coronel Fabriciano, MG',
+                country: 'Brasil'
+            },
+            social: {
+                title: 'Redes Sociais'
+            },
+            copyright: '© 2025 Yan Teles. Todos os direitos reservados.'
         }
     },
     en: {
@@ -196,6 +211,21 @@ const translations = {
                     'Performance Optimization'
                 ]
             }
+        },
+        footer: {
+            contact: {
+                title: 'Contact',
+                cta: 'Let\'s work together? Get in touch!'
+            },
+            location: {
+                title: 'Location',
+                city: 'Coronel Fabriciano, MG',
+                country: 'Brazil'
+            },
+            social: {
+                title: 'Social Media'
+            },
+            copyright: '© 2025 Yan Teles. All rights reserved.'
         }
     }
 };
@@ -266,6 +296,18 @@ langToggle.addEventListener('click', () => {
 function setLanguage(lang) {
     langText.textContent = lang.toUpperCase();
     
+    // Update all elements with data-lang-key attribute
+    document.querySelectorAll('[data-lang-key]').forEach(element => {
+        const keys = element.getAttribute('data-lang-key').split('.');
+        let translation = translations[lang];
+        for (const key of keys) {
+            translation = translation[key];
+        }
+        if (translation) {
+            element.textContent = translation;
+        }
+    });
+
     // Update menu items
     document.querySelectorAll('.menu h2').forEach((item, index) => {
         const keys = ['home', 'about', 'skills', 'projects', 'contact'];
