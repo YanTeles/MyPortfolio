@@ -1089,3 +1089,95 @@ main img {
     transform: none;
 }
 
+/* Social Buttons */
+.social-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.social-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.social-btn svg {
+    width: 20px;
+    height: 20px;
+    transition: all 0.3s ease;
+}
+
+.social-btn.github {
+    background-color: #24292e;
+    color: #fff;
+}
+
+.social-btn.linkedin {
+    background-color: #0077b5;
+    color: #fff;
+}
+
+.social-btn.cv {
+    background-color: var(--highlights);
+    color: var(--surface);
+}
+
+.social-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.social-btn.github:hover {
+    border-color: #24292e;
+    background-color: transparent;
+    color: #24292e;
+}
+
+.social-btn.linkedin:hover {
+    border-color: #0077b5;
+    background-color: transparent;
+    color: #0077b5;
+}
+
+.social-btn.cv:hover {
+    border-color: var(--highlights);
+    background-color: transparent;
+    color: var(--highlights);
+}
+
+/* Responsive adjustments for social buttons */
+@media (max-width: 768px) {
+    .social-buttons {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .social-btn {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+    }
+
+    .social-btn svg {
+        width: 18px;
+        height: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .social-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .social-btn {
+        justify-content: center;
+    }
+}
+
