@@ -357,6 +357,21 @@
     </footer>
 
     <script src="./Script/script.js"></script>
+    <script>
+        // Corrige o caminho do arquivo de animação para o GitHub Pages
+        document.addEventListener('DOMContentLoaded', function () {
+            if (window.lottie && document.getElementById('theme-animation')) {
+                lottie.loadAnimation({
+                    container: document.getElementById('theme-animation'),
+                    renderer: 'svg',
+                    loop: true,
+                    autoplay: true,
+                    // Coloque o arquivo JSON da animação na pasta 'Images' ou 'assets' e ajuste o caminho abaixo
+                    path: './Images/darkmode.json' // ajuste conforme o local do seu arquivo de animação
+                });
+            }
+        });
+    </script>
 </body>
 
 </html>
