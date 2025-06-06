@@ -10,6 +10,27 @@
     <link href="https://fonts.googleapis.com/css2?family=Comic+Relief:wght@400;700&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.3/lottie.min.js"></script>
     <title>Portifólio</title>
+    <style>
+        /* Animação simples para o botão de dark mode */
+        .theme-animation {
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s;
+        }
+        .theme-icon {
+            width: 24px;
+            height: 24px;
+            transition: transform 0.5s cubic-bezier(.4,2,.6,1), fill 0.3s;
+            fill: #222;
+        }
+        body.dark .theme-icon {
+            transform: rotate(360deg);
+            fill: #ffe066;
+        }
+    </style>
 </head>
 
 <body>
@@ -26,7 +47,13 @@
         </nav>
         <div class="settings">
             <button id="themeToggle" class="theme-toggle" aria-label="Alternar tema">
-                <div id="theme-animation" class="theme-animation"></div>
+                <div id="theme-animation" class="theme-animation">
+                    <!-- SVG sol/lua animado -->
+                    <svg id="themeIcon" class="theme-icon" viewBox="0 0 24 24">
+                        <circle id="sun" cx="12" cy="12" r="6"/>
+                        <path id="moon" d="M17 12a5 5 0 0 1-5-5c0-1.657.672-3.156 1.757-4.243A7 7 0 1 0 19 19.243C18.156 18.328 17 15.657 17 12z" style="opacity:0"/>
+                    </svg>
+                </div>
             </button>
             <button id="langToggle" class="lang-toggle">
                 <span class="lang-text">EN</span>
@@ -358,18 +385,32 @@
 
     <script src="./Script/script.js"></script>
     <script>
-        // Corrige o caminho do arquivo de animação para o GitHub Pages
+        // Animação SVG para dark/light mode
         document.addEventListener('DOMContentLoaded', function () {
-            if (window.lottie && document.getElementById('theme-animation')) {
-                lottie.loadAnimation({
-                    container: document.getElementById('theme-animation'),
-                    renderer: 'svg',
-                    loop: true,
-                    autoplay: true,
-                    // Coloque o arquivo JSON da animação na pasta 'Images' ou 'assets' e ajuste o caminho abaixo
-                    path: './Images/darkmode.json' // ajuste conforme o local do seu arquivo de animação
-                });
+            var themeBtn = document.getElementById('themeToggle');
+            var themeIcon = document.getElementById('themeIcon');
+            var sun = document.getElementById('sun');
+            var moon = document.getElementById('moon');
+
+            function setTheme(isDark) {
+                document.body.classList.toggle('dark', isDark);
+                // Animação: alterna opacidade dos elementos
+                if (isDark) {
+                    sun.style.opacity = 0;
+                    moon.style.opacity = 1;
+                } else {
+                    sun.style.opacity = 1;
+                    moon.style.opacity = 0;
+                }
             }
+
+            // Estado inicial
+            setTheme(document.body.classList.contains('dark'));
+
+            themeBtn && themeBtn.addEventListener('click', function () {
+                var isDark = !document.body.classList.contains('dark');
+                setTheme(isDark);
+            });
         });
     </script>
 </body>
