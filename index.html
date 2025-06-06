@@ -31,7 +31,7 @@
             fill: #ffe066;
         }
 
-        /* --- MOBILE NAVIGATION --- */
+        /* --- DESKTOP NAVIGATION --- */
         .menu {
             display: flex;
             flex-direction: row;
@@ -39,40 +39,39 @@
         }
         .menu-toggle {
             display: none;
-            background: none;
-            border: none;
-            font-size: 2rem;
-            cursor: pointer;
-            margin-left: 1rem;
         }
+
+        /* --- MOBILE NAVIGATION --- */
         @media (max-width: 800px) {
-            .menu {
-                position: absolute;
-                top: 70px;
-                left: 0;
-                right: 0;
-                background: var(--header-bg, #fff);
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 0;
-                padding: 1rem 2rem;
-                display: none;
-                z-index: 100;
-                box-shadow: 0 4px 16px rgba(0,0,0,0.07);
-            }
-            .menu.open {
-                display: flex;
-            }
-            .menu h2 {
-                width: 100%;
-                margin: 0.5rem 0;
-                font-size: 1.2rem;
-            }
+            .menu,
             .menu-toggle {
-                display: block;
+                display: none !important;
             }
             header {
+                display: block;
                 position: relative;
+                width: 100%;
+            }
+            .header-flex {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+                width: 100%;
+                padding: 0 1rem;
+            }
+            .profile-section {
+                margin: 0;
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+            }
+            .settings {
+                flex-direction: row;
+                gap: 1rem;
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
             }
         }
     </style>
@@ -80,31 +79,34 @@
 
 <body>
     <header>
-        <div class="profile-section">
-            <img class="avatar" src="./Images/avatar.png" alt="">
+        <div class="header-flex">
+            <div class="profile-section">
+                <img class="avatar" src="./Images/avatar.png" alt="">
+            </div>
+            <div class="settings">
+                <button id="themeToggle" class="theme-toggle" aria-label="Alternar tema">
+                    <div id="theme-animation" class="theme-animation">
+                        <!-- SVG sol/lua animado -->
+                        <svg id="themeIcon" class="theme-icon" viewBox="0 0 24 24">
+                            <circle id="sun" cx="12" cy="12" r="6"/>
+                            <path id="moon" d="M17 12a5 5 0 0 1-5-5c0-1.657.672-3.156 1.757-4.243A7 7 0 1 0 19 19.243C18.156 18.328 17 15.657 17 12z" style="opacity:0"/>
+                        </svg>
+                    </div>
+                </button>
+                <button id="langToggle" class="lang-toggle">
+                    <span class="lang-text">EN</span>
+                </button>
+            </div>
         </div>
+        <!-- nav and menu-toggle remain for desktop, hidden on mobile -->
         <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">&#9776;</button>
         <nav class="menu" id="mainMenu">
-            <h2><img class="icons icon-text-container" src="./Images/Casa.png" alt="">Home</h2>
-            <h2><img class="icons icon-text-container" src="./Images/sobre.png" alt="">Sobre</h2>
-            <h2><img class="icons icon-text-container" src="./Images/Habilidades.png" alt="">Habilidades</h2>
-            <h2><img class="icons icon-text-container" src="./Images/projetos.png" alt="">Projetos</h2>
-            <h2><img class="icons icon-text-container" src="./Images/contato1.png">Contato</h2>
+            <h2 class="nav-item"><img class="icons icon-text-container" src="./Images/Casa.png" alt="">Home</h2>
+            <h2 class="nav-item"><img class="icons icon-text-container" src="./Images/sobre.png" alt="">Sobre</h2>
+            <h2 class="nav-item"><img class="icons icon-text-container" src="./Images/Habilidades.png" alt="">Habilidades</h2>
+            <h2 class="nav-item"><img class="icons icon-text-container" src="./Images/projetos.png" alt="">Projetos</h2>
+            <h2 class="nav-item"><img class="icons icon-text-container" src="./Images/contato1.png">Contato</h2>
         </nav>
-        <div class="settings">
-            <button id="themeToggle" class="theme-toggle" aria-label="Alternar tema">
-                <div id="theme-animation" class="theme-animation">
-                    <!-- SVG sol/lua animado -->
-                    <svg id="themeIcon" class="theme-icon" viewBox="0 0 24 24">
-                        <circle id="sun" cx="12" cy="12" r="6"/>
-                        <path id="moon" d="M17 12a5 5 0 0 1-5-5c0-1.657.672-3.156 1.757-4.243A7 7 0 1 0 19 19.243C18.156 18.328 17 15.657 17 12z" style="opacity:0"/>
-                    </svg>
-                </div>
-            </button>
-            <button id="langToggle" class="lang-toggle">
-                <span class="lang-text">EN</span>
-            </button>
-        </div>
     </header>
 
     <main>
@@ -440,7 +442,6 @@
 
             function setTheme(isDark) {
                 document.body.classList.toggle('dark', isDark);
-                // Animação: alterna opacidade dos elementos
                 if (isDark) {
                     sun.style.opacity = 0;
                     moon.style.opacity = 1;
@@ -450,30 +451,12 @@
                 }
             }
 
-            // Estado inicial
             setTheme(document.body.classList.contains('dark'));
 
             themeBtn && themeBtn.addEventListener('click', function () {
                 var isDark = !document.body.classList.contains('dark');
                 setTheme(isDark);
             });
-        });
-
-        // Mobile nav toggle
-        document.addEventListener('DOMContentLoaded', function () {
-            var menuToggle = document.getElementById('menuToggle');
-            var mainMenu = document.getElementById('mainMenu');
-            if (menuToggle && mainMenu) {
-                menuToggle.addEventListener('click', function () {
-                    mainMenu.classList.toggle('open');
-                });
-                // Fecha o menu ao clicar fora (opcional)
-                document.addEventListener('click', function(e) {
-                    if (!mainMenu.contains(e.target) && !menuToggle.contains(e.target)) {
-                        mainMenu.classList.remove('open');
-                    }
-                });
-            }
         });
     </script>
 </body>
