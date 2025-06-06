@@ -15,18 +15,22 @@
 <body>
     <header>
         <div class="profile-section">
-            <img class="avatar" src="Images/avatar.png" alt="">
+            <img class="avatar" src="./Images/avatar.png" alt="">
         </div>
         <nav class="menu">
-            <h2><img class="icons icon-text-container" src="Images/Casa.png" alt="">Home</h2>
-            <h2><img class="icons icon-text-container" src="Images/sobre.png" alt="">Sobre</h2>
-            <h2><img class="icons icon-text-container" src="Images/habilidades.png" alt="">Habilidades</h2>
-            <h2><img class="icons icon-text-container" src="Images/projetos.png" alt="">Projetos</h2>
-            <h2><img class="icons icon-text-container" src="Images/contato1.png">Contato</h2>
+            <h2><img class="icons icon-text-container" src="./Images/Casa.png" alt="">Home</h2>
+            <h2><img class="icons icon-text-container" src="./Images/sobre.png" alt="">Sobre</h2>
+            <h2><img class="icons icon-text-container" src="./Images/habilidades.png" alt="">Habilidades</h2>
+            <h2><img class="icons icon-text-container" src="./Images/projetos.png" alt="">Projetos</h2>
+            <h2><img class="icons icon-text-container" src="./Images/contato1.png">Contato</h2>
         </nav>
         <div class="settings">
-            <button id="themeToggle" class="theme-toggle">
+            <button id="themeToggle" class="theme-toggle" aria-label="Alternar tema">
                 <div id="theme-animation" class="theme-animation"></div>
+                <!-- Ícone fallback para dark mode -->
+                <span class="theme-fallback-icon" style="display:inline-block;width:24px;height:24px;vertical-align:middle;">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/><path d="M12 2a10 10 0 0 0 0 20 10 10 0 0 1 0-20z" fill="#fff"/></svg>
+                </span>
             </button>
             <button id="langToggle" class="lang-toggle">
                 <span class="lang-text">EN</span>
@@ -52,7 +56,7 @@
                         </svg>
                         LinkedIn
                     </a>
-                    <a href="assets/Cv Ti.pdf" download class="social-btn cv">
+                    <a href="./assets/Cv Ti.pdf" download class="social-btn cv">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
                             <polyline points="14 2 14 8 20 8"/>
@@ -64,7 +68,7 @@
                     </a>
                 </div>
             </div>
-            <img src="Images/avatar.png" alt="Foto de perfil">
+            <img src="./Images/avatar.png" alt="Foto de perfil">
         </div>
     </main>
 
@@ -109,29 +113,29 @@
                             </svg>
                         </button>
                         <div class="skill-content active" data-skill="html">
-                            <img src="Images/html2.png" alt="HTML5">
+                            <img src="./Images/html2.png" alt="HTML5">
                         </div>
                         <div class="skill-content" data-skill="css">
-                            <img src="Images/css2.png" alt="CSS3">
+                            <img src="./Images/css2.png" alt="CSS3">
                         </div>
                         <div class="skill-content" data-skill="js">
-                            <img src="Images/Js-2.png" alt="JavaScript">
+                            <img src="./Images/Js-2.png" alt="JavaScript">
                         </div>
                         <div class="skill-content" data-skill="java">
-                            <img src="Images/java2.png" alt="Java">
+                            <img src="./Images/java2.png" alt="Java" onerror="this.onerror=null;this.src='./Images/java.png';">
                         </div>
                         <div class="skill-content" data-skill="git">
                             <div class="dual-image-container">
-                                <img src="Images/git2.png" alt="Git" class="dual-image">
+                                <img src="./Images/git2.png" alt="Git" class="dual-image">
                             </div>
                         </div>
                         <div class="skill-content" data-skill="vscode">
                             <div class="dual-image-container">
-                                <img src="Images/visual2.png" alt="VS Code" class="dual-image">
+                                <img src="./Images/visual2.png" alt="VS Code" class="dual-image">
                             </div>
                         </div>
                         <div class="skill-content" data-skill="mysql">
-                            <img src="Images/mysql2.png" alt="MySQL">
+                            <img src="./Images/mysql2.png" alt="MySQL">
                         </div>
                         <button class="nav-arrow next-arrow" aria-label="Next skill">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -141,29 +145,29 @@
                     </div>
                     <div class="skills-thumbnails">
                         <button class="thumb active" data-skill="html" style="--thumb-color: #E44D26">
-                            <img src="Images/html.png" alt="HTML5">
+                            <img src="./Images/html.png" alt="HTML5">
                         </button>
                         <button class="thumb" data-skill="css" style="--thumb-color: #264DE4">
-                            <img src="Images/css.png" alt="CSS3">
+                            <img src="./Images/css.png" alt="CSS3">
                         </button>
                         <button class="thumb" data-skill="js" style="--thumb-color: #F7DF1E">
-                            <img src="Images/Js.png" alt="JavaScript">
+                            <img src="./Images/Js.png" alt="JavaScript">
                         </button>
                         <button class="thumb" data-skill="java" style="--thumb-color: #007396">
-                            <img src="Images/java.png" alt="Java">
+                            <img src="./Images/java.png" alt="Java">
                         </button>
                         <button class="thumb" data-skill="git" style="--thumb-color: #F14E32">
                             <div class="dual-image-container-small">
-                                <img src="Images/git.png" alt="Git" class="dual-image-small">
+                                <img src="./Images/git.png" alt="Git" class="dual-image-small">
                             </div>
                         </button>
                         <button class="thumb" data-skill="vscode" style="--thumb-color: #007ACC">
                             <div class="dual-image-container-small">
-                                <img src="Images/visual.png" alt="VS Code" class="dual-image-small">
+                                <img src="./Images/visual.png" alt="VS Code" class="dual-image-small">
                             </div>
                         </button>
                         <button class="thumb" data-skill="mysql" style="--thumb-color: #00758F">
-                            <img src="Images/mysql.png" alt="MySQL">
+                            <img src="./Images/mysql.png" alt="MySQL">
                         </button>
                     </div>
                 </div>
@@ -356,7 +360,7 @@
         </div>
     </footer>
 
-    <script src="Script/script.js"></script>
+    <script src="./Script/script.js"></script>
 </body>
 
 </html>
