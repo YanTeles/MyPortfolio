@@ -279,6 +279,28 @@ function setTheme(theme) {
 // Initialize theme animation when the page loads
 document.addEventListener('DOMContentLoaded', initThemeAnimation);
 
+// Animação SVG para dark/light mode
+document.addEventListener('DOMContentLoaded', function () {
+    var themeBtn = document.getElementById('themeToggle');
+    var moonGroup = document.querySelector('.theme-sun');
+    var sunGroup = document.querySelector('.theme-moon');
+    function setTheme(isDark) {
+        document.body.classList.toggle('dark', isDark);
+        if (isDark) {
+            sunGroup.style.display = 'none';
+            moonGroup.style.display = 'block';
+        } else {
+            sunGroup.style.display = 'block';
+            moonGroup.style.display = 'none';
+        }
+    }
+    setTheme(document.body.classList.contains('dark'));
+    themeBtn && themeBtn.addEventListener('click', function () {
+        var isDark = !document.body.classList.contains('dark');
+        setTheme(isDark);
+    });
+});
+
 // Language handling
 const langToggle = document.getElementById('langToggle');
 const langText = document.querySelector('.lang-text');

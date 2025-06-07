@@ -7,74 +7,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/index.css">
+    <link rel="stylesheet" href="styles/global.css">
     <link href="https://fonts.googleapis.com/css2?family=Comic+Relief:wght@400;700&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.3/lottie.min.js"></script>
     <title>Portifólio</title>
-    <style>
-        /* Animação simples para o botão de dark mode */
-        .theme-animation {
-            width: 32px;
-            height: 32px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: background 0.3s;
-        }
-        .theme-icon {
-            width: 24px;
-            height: 24px;
-            transition: transform 0.5s cubic-bezier(.4,2,.6,1), fill 0.3s;
-            fill: #222;
-        }
-        body.dark .theme-icon {
-            transform: rotate(360deg);
-            fill: #ffe066;
-        }
-
-        /* --- DESKTOP NAVIGATION --- */
-        .menu {
-            display: flex;
-            flex-direction: row;
-            gap: 1rem;
-        }
-        .menu-toggle {
-            display: none;
-        }
-
-        /* --- MOBILE NAVIGATION --- */
-        @media (max-width: 800px) {
-            .menu,
-            .menu-toggle {
-                display: none !important;
-            }
-            header {
-                display: block;
-                position: relative;
-                width: 100%;
-            }
-            .header-flex {
-                display: flex;
-                flex-direction: row;
-                align-items: center;
-                justify-content: space-between;
-                width: 100%;
-                padding: 0 1rem;
-            }
-            .profile-section {
-                margin: 0;
-                display: flex;
-                align-items: center;
-                justify-content: flex-start;
-            }
-            .settings {
-                flex-direction: row;
-                gap: 1rem;
-                display: flex;
-                align-items: center;
-                justify-content: flex-end;
-            }
-        }
-    </style>
 </head>
 
 <body>
@@ -83,13 +19,37 @@
             <div class="profile-section">
                 <img class="avatar" src="./Images/avatar.png" alt="">
             </div>
+            <nav class="menu" id="mainMenu">
+                <h2 class="nav-item"><img class="icons icon-text-container" src="./Images/Casa.png" alt="">Home</h2>
+                <h2 class="nav-item"><img class="icons icon-text-container" src="./Images/sobre.png" alt="">Sobre</h2>
+                <h2 class="nav-item"><img class="icons icon-text-container" src="./Images/Habilidades.png" alt="">Habilidades</h2>
+                <h2 class="nav-item"><img class="icons icon-text-container" src="./Images/projetos.png" alt="">Projetos</h2>
+                <h2 class="nav-item"><img class="icons icon-text-container" src="./Images/contato1.png">Contato</h2>
+            </nav>
             <div class="settings">
                 <button id="themeToggle" class="theme-toggle" aria-label="Alternar tema">
                     <div id="theme-animation" class="theme-animation">
-                        <!-- SVG sol/lua animado -->
-                        <svg id="themeIcon" class="theme-icon" viewBox="0 0 24 24">
-                            <circle id="sun" cx="12" cy="12" r="6"/>
-                            <path id="moon" d="M17 12a5 5 0 0 1-5-5c0-1.657.672-3.156 1.757-4.243A7 7 0 1 0 19 19.243C18.156 18.328 17 15.657 17 12z" style="opacity:0"/>
+                        <!-- Animação SVG customizada para troca de modos -->
+                        <svg class="theme-toggle-svg" viewBox="0 0 40 40" fill="none">
+                            <!-- Sun -->
+                            <g class="theme-sun" style="display: block;">
+                                <circle cx="20" cy="20" r="9" fill="#ffe066" stroke="#f7c948" stroke-width="2"/>
+                                <g stroke="#f7c948" stroke-width="2">
+                                    <line x1="20" y1="4" x2="20" y2="10"/>
+                                    <line x1="20" y1="30" x2="20" y2="36"/>
+                                    <line x1="4" y1="20" x2="10" y2="20"/>
+                                    <line x1="30" y1="20" x2="36" y2="20"/>
+                                    <line x1="9.29" y1="9.29" x2="13.5" y2="13.5"/>
+                                    <line x1="30.71" y1="9.29" x2="26.5" y2="13.5"/>
+                                    <line x1="9.29" y1="30.71" x2="13.5" y2="26.5"/>
+                                    <line x1="30.71" y1="30.71" x2="26.5" y2="26.5"/>
+                                </g>
+                            </g>
+                            <!-- Moon -->
+                            <g class="theme-moon" style="display: none;">
+                                <circle cx="25" cy="20" r="9" fill="#ffe066"/>
+                                <path d="M32 20a7 7 0 1 1-7-7c0-2.5 2-7 7-7a9 9 0 1 0 0 18z" fill="#222"/>
+                            </g>
                         </svg>
                     </div>
                 </button>
@@ -100,13 +60,6 @@
         </div>
         <!-- nav and menu-toggle remain for desktop, hidden on mobile -->
         <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">&#9776;</button>
-        <nav class="menu" id="mainMenu">
-            <h2 class="nav-item"><img class="icons icon-text-container" src="./Images/Casa.png" alt="">Home</h2>
-            <h2 class="nav-item"><img class="icons icon-text-container" src="./Images/sobre.png" alt="">Sobre</h2>
-            <h2 class="nav-item"><img class="icons icon-text-container" src="./Images/Habilidades.png" alt="">Habilidades</h2>
-            <h2 class="nav-item"><img class="icons icon-text-container" src="./Images/projetos.png" alt="">Projetos</h2>
-            <h2 class="nav-item"><img class="icons icon-text-container" src="./Images/contato1.png">Contato</h2>
-        </nav>
     </header>
 
     <main>
@@ -432,33 +385,5 @@
     </footer>
 
     <script src="./Script/script.js"></script>
-    <script>
-        // Animação SVG para dark/light mode
-        document.addEventListener('DOMContentLoaded', function () {
-            var themeBtn = document.getElementById('themeToggle');
-            var themeIcon = document.getElementById('themeIcon');
-            var sun = document.getElementById('sun');
-            var moon = document.getElementById('moon');
-
-            function setTheme(isDark) {
-                document.body.classList.toggle('dark', isDark);
-                if (isDark) {
-                    sun.style.opacity = 0;
-                    moon.style.opacity = 1;
-                } else {
-                    sun.style.opacity = 1;
-                    moon.style.opacity = 0;
-                }
-            }
-
-            setTheme(document.body.classList.contains('dark'));
-
-            themeBtn && themeBtn.addEventListener('click', function () {
-                var isDark = !document.body.classList.contains('dark');
-                setTheme(isDark);
-            });
-        });
-    </script>
 </body>
-
 </html>

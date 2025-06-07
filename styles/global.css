@@ -64,9 +64,13 @@ body {
 }
 
 .theme-animation {
-    width: 32px;
-    height: 32px;
-    pointer-events: none;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s;
+    position: relative;
 }
 
 .theme-toggle:hover {
@@ -103,4 +107,71 @@ body {
 .info-card {
     background-color: var(--card-bg);
     transition: background-color 0.3s ease;
+}
+
+/* --- DESKTOP NAVIGATION --- */
+.header-flex {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 1rem;
+}
+.profile-section {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.settings {
+    flex-direction: row;
+    gap: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+.menu {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    align-items: center;
+    margin-left: 2rem;
+}
+.menu-toggle {
+    display: none;
+}
+
+/* --- MOBILE NAVIGATION --- */
+@media (max-width: 800px) {
+    .menu,
+    .menu-toggle {
+        display: none !important;
+    }
+    header {
+        display: block;
+        position: relative;
+        width: 100%;
+    }
+    .header-flex {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        padding: 0 1rem;
+    }
+    .profile-section {
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+    }
+    .settings {
+        flex-direction: row;
+        gap: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+    }
 }
