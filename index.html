@@ -126,176 +126,196 @@
     </section>
 
     <section class="skills-section" id="skills">
-        <div class="skills-container">
-            <h2 class="section-title">Habilidades</h2>
-            <div class="skills-layout">
-                <div class="skills-showcase">
-                    <div class="main-skill">
-                        <button class="nav-arrow prev-arrow" aria-label="Previous skill">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </button>
-                        <div class="skill-content active" data-skill="html">
-                            <img src="./Images/html2.png" alt="HTML5">
+        <div class="container">
+            <div class="skills-container">
+                <h2 class="section-title">Habilidades</h2>
+                <div class="skills-layout">
+                    <div class="skills-showcase">
+                        <div class="main-skill">
+                            <button class="nav-arrow prev-arrow" aria-label="Previous skill">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                    <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </button>
+                            <div class="skill-content active" data-skill="html">
+                                <img src="./Images/html2.png" alt="HTML5">
+                            </div>
+                            <div class="skill-content" data-skill="css">
+                                <img src="./Images/css2.png" alt="CSS3">
+                            </div>
+                            <div class="skill-content" data-skill="js">
+                                <img src="./Images/Js-2.png" alt="JavaScript">
+                            </div>
+                            <div class="skill-content" data-skill="java">
+                                <img src="./Images/Java2.png" alt="Java">
+                            </div>
+                            <div class="skill-content" data-skill="git">
+                                <div class="dual-image-container">
+                                    <img src="./Images/git2.png" alt="Git" class="dual-image">
+                                </div>
+                            </div>
+                            <div class="skill-content" data-skill="vscode">
+                                <div class="dual-image-container">
+                                    <img src="./Images/visual2.png" alt="VS Code" class="dual-image">
+                                </div>
+                            </div>
+                            <div class="skill-content" data-skill="mysql">
+                                <img src="./Images/mysql2.png" alt="MySQL">
+                            </div>
+                            <div class="skill-content" data-skill="react">
+                                <img src="./Images/react2.png" alt="React">
+                            </div>
+                            <div class="skill-content" data-skill="typescript">
+                                <img src="./Images/typescript2.png" alt="TypeScript">
+                            </div>
+                            <button class="nav-arrow next-arrow" aria-label="Next skill">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                    <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </button>
+                            
                         </div>
-                        <div class="skill-content" data-skill="css">
-                            <img src="./Images/css2.png" alt="CSS3">
+                        <div class="skills-thumbnails" style="grid-template-columns: repeat(4, 1fr);">
+                            <button class="thumb active" data-skill="html" style="--thumb-color: #E44D26">
+                                <img src="./Images/html.png" alt="HTML5">
+                            </button>
+                            <button class="thumb" data-skill="css" style="--thumb-color: #264DE4">
+                                <img src="./Images/css.png" alt="CSS3">
+                            </button>
+                            <button class="thumb" data-skill="js" style="--thumb-color: #F7DF1E">
+                                <img src="./Images/Js.png" alt="JavaScript">
+                            </button>
+                            <button class="thumb" data-skill="java" style="--thumb-color: #007396">
+                                <img src="./Images/java.png" alt="Java">
+                            </button>
+                            <button class="thumb" data-skill="git" style="--thumb-color: #F14E32">
+                                <div class="dual-image-container-small">
+                                    <img src="./Images/git.png" alt="Git" class="dual-image-small">
+                                </div>
+                            </button>
+                            <button class="thumb" data-skill="vscode" style="--thumb-color: #007ACC">
+                                <div class="dual-image-container-small">
+                                    <img src="./Images/visual.png" alt="VS Code" class="dual-image-small">
+                                </div>
+                            </button>
+                            <button class="thumb" data-skill="mysql" style="--thumb-color: #00758F">
+                                <img src="./Images/mysql.png" alt="MySQL">
+                            </button>
+                            <button class="thumb" data-skill="react" style="--thumb-color: #00758F">
+                                <img src="./Images/react.png" alt="React">
+                            </button>
+                            <button class="thumb" data-skill="typescript" style="--thumb-color: #3178C6">
+                                <img src="./Images/typescript.png" alt="TypeScript">
+                            </button>
                         </div>
-                        <div class="skill-content" data-skill="js">
-                            <img src="./Images/Js-2.png" alt="JavaScript">
-                        </div>
-                        <div class="skill-content" data-skill="java">
-                            <img src="./Images/Java2.png" alt="Java">
-                        </div>
-                        <div class="skill-content" data-skill="git">
-                            <div class="dual-image-container">
-                                <img src="./Images/git2.png" alt="Git" class="dual-image">
+                    </div>
+                    <div class="skills-info">
+                        <div class="skill-details active" data-skill="html">
+                            <h3>HTML5</h3>
+                            <div class="skill-description">
+                                <p>HTML5 é a versão mais recente da linguagem de marcação HTML, fundamental para a criação de conteúdo na web. Suas inovações incluem suporte nativo para áudio e vídeo, novos elementos semânticos  e APIs para aplicações web interativas, tornando-o a base para páginas modernas e responsivas.</p>
+                                <ul>
+                                    <li>SEO e boas práticas</li>
+                                    <li>HTML5 Semântico</li>
+                                    <li>Acessibilidade Web</li>
+                                    <li>Formulários e Validação</li>
+                                </ul>
                             </div>
                         </div>
-                        <div class="skill-content" data-skill="vscode">
-                            <div class="dual-image-container">
-                                <img src="./Images/visual2.png" alt="VS Code" class="dual-image">
+                        <div class="skill-details" data-skill="css">
+                            <h3>CSS3</h3>
+                            <div class="skill-description">
+                                <p>CSS3 é a terceira versão das Cascading Style Sheets, usada para estilizar documentos HTML e XML. Ela introduziu módulos e funcionalidades que permitem designs web mais complexos e dinâmicos, como animações, transições, transformações, sombras, gradientes, bordas arredondadas e designs responsivos. Essencialmente, o CSS3 dá vida e estilo ao conteúdo HTML, controlando a aparência e a adaptabilidade visual de páginas web modernas.</p>
+                                <ul>
+                                    <li>Flexbox e Grid</li>
+                                    <li>Animações e Transições</li>
+                                    <li>Design Responsivo</li>
+                                </ul>
                             </div>
                         </div>
-                        <div class="skill-content" data-skill="mysql">
-                            <img src="./Images/mysql2.png" alt="MySQL">
-                        </div>
-                        <div class="skill-content" data-skill="react">
-                            <img src="./Images/react2.png" alt="React">
-                        </div>
-                        <button class="nav-arrow next-arrow" aria-label="Next skill">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </button>
-                        
-                    </div>
-                    <div class="skills-thumbnails">
-                        <button class="thumb active" data-skill="html" style="--thumb-color: #E44D26">
-                            <img src="./Images/html.png" alt="HTML5">
-                        </button>
-                        <button class="thumb" data-skill="css" style="--thumb-color: #264DE4">
-                            <img src="./Images/css.png" alt="CSS3">
-                        </button>
-                        <button class="thumb" data-skill="js" style="--thumb-color: #F7DF1E">
-                            <img src="./Images/Js.png" alt="JavaScript">
-                        </button>
-                        <button class="thumb" data-skill="java" style="--thumb-color: #007396">
-                            <img src="./Images/java.png" alt="Java">
-                        </button>
-                        <button class="thumb" data-skill="git" style="--thumb-color: #F14E32">
-                            <div class="dual-image-container-small">
-                                <img src="./Images/git.png" alt="Git" class="dual-image-small">
+                        <div class="skill-details" data-skill="js">
+                            <h3>JavaScript</h3>
+                            <div class="skill-description">
+                                <p>JavaScript é uma linguagem de programação versátil e de alto nível, usada para tornar páginas web interativas. Além de adicionar comportamentos a sites, ela se expandiu para desenvolvimento de back-end , aplicações mobile, desktop e jogos, sendo uma das linguagens mais populares na web.</p>
+                                <ul>
+                                    <li>ES6+</li>
+                                    <li>DOM Manipulation</li>
+                                    <li>Async/Await</li>
+                                    <li>APIs REST</li>
+                                </ul>
                             </div>
-                        </button>
-                        <button class="thumb" data-skill="vscode" style="--thumb-color: #007ACC">
-                            <div class="dual-image-container-small">
-                                <img src="./Images/visual.png" alt="VS Code" class="dual-image-small">
+                        </div>
+                        <div class="skill-details" data-skill="java">
+                            <h3>Java</h3>
+                            <div class="skill-description">
+                                <p>Java é uma linguagem de programação orientada a objetos e de alto nível, amplamente usada para desenvolver diversas aplicações. Sua filosofia "Escreva uma vez, execute em qualquer lugar" permite que o código compilado rode em qualquer plataforma com uma Java Virtual Machine. É essencial para aplicações corporativas, Android, big data, back-end, serviços web e IoT, destacando-se por sua robustez, segurança e portabilidade.</p>
+                                <ul>
+                                    <li>Programação Orientada a Objetos</li>
+                                    <li>Collections Framework</li>
+                                    <li>Spring Boot</li>
+                                    <li>JPA/Hibernate</li>
+                                </ul>
                             </div>
-                        </button>
-                        <button class="thumb" data-skill="mysql" style="--thumb-color: #00758F">
-                            <img src="./Images/mysql.png" alt="MySQL">
-                        </button>
-                        <button class="thumb" data-skill="react" style="--thumb-color: #00758F">
-                            <img src="./Images/react.png" alt="React">
-                        </button>
-                    </div>
-                </div>
-                <div class="skills-info">
-                    <div class="skill-details active" data-skill="html">
-                        <h3>HTML5</h3>
-                        <div class="skill-description">
-                            <p>HTML5 é a versão mais recente da linguagem de marcação HTML, fundamental para a criação de conteúdo na web. Suas inovações incluem suporte nativo para áudio e vídeo, novos elementos semânticos  e APIs para aplicações web interativas, tornando-o a base para páginas modernas e responsivas.</p>
-                            <ul>
-                                <li>SEO e boas práticas</li>
-                                <li>HTML5 Semântico</li>
-                                <li>Acessibilidade Web</li>
-                                <li>Formulários e Validação</li>
-                            </ul>
                         </div>
-                    </div>
-                    <div class="skill-details" data-skill="css">
-                        <h3>CSS3</h3>
-                        <div class="skill-description">
-                            <p>CSS3 é a terceira versão das Cascading Style Sheets, usada para estilizar documentos HTML e XML. Ela introduziu módulos e funcionalidades que permitem designs web mais complexos e dinâmicos, como animações, transições, transformações, sombras, gradientes, bordas arredondadas e designs responsivos. Essencialmente, o CSS3 dá vida e estilo ao conteúdo HTML, controlando a aparência e a adaptabilidade visual de páginas web modernas.</p>
-                            <ul>
-                                <li>Flexbox e Grid</li>
-                                <li>Animações e Transições</li>
-                                <li>Design Responsivo</li>
-                            </ul>
+                        <div class="skill-details" data-skill="git">
+                            <h3>Git & GitHub</h3>
+                            <div class="skill-description">
+                                <p>Controle de versão e colaboração em projetos de software. Gerenciamento eficiente de código-fonte, branches e resolução de conflitos, além de integração com ferramentas de CI/CD para desenvolvimento ágil.</p>
+                                <ul>
+                                    <li>Controle de Versão Distribuído</li>
+                                    <li>Branches e Merge Strategies</li>
+                                    <li>Pull Requests e Code Review</li>
+                                    <li>GitHub Actions e Workflows</li>
+                                </ul>
+                            </div>
                         </div>
-                    </div>
-                    <div class="skill-details" data-skill="js">
-                        <h3>JavaScript</h3>
-                        <div class="skill-description">
-                            <p>JavaScript é uma linguagem de programação versátil e de alto nível, usada para tornar páginas web interativas. Além de adicionar comportamentos a sites, ela se expandiu para desenvolvimento de back-end , aplicações mobile, desktop e jogos, sendo uma das linguagens mais populares na web.</p>
-                            <ul>
-                                <li>ES6+</li>
-                                <li>DOM Manipulation</li>
-                                <li>Async/Await</li>
-                                <li>APIs REST</li>
-                            </ul>
+                        <div class="skill-details" data-skill="vscode">
+                            <h3>Visual Studio Code</h3>
+                            <div class="skill-description">
+                                <p>Editor de código altamente personalizável e poderoso, com suporte a diversas linguagens e extensões que aumentam a produtividade no desenvolvimento.</p>
+                                <ul>
+                                    <li>Debugging Avançado</li>
+                                    <li>Extensões e Personalização</li>
+                                    <li>Integração com Git</li>
+                                    <li>Terminal Integrado</li>
+                                </ul>
+                            </div>
                         </div>
-                    </div>
-                    <div class="skill-details" data-skill="java">
-                        <h3>Java</h3>
-                        <div class="skill-description">
-                            <p>Java é uma linguagem de programação orientada a objetos e de alto nível, amplamente usada para desenvolver diversas aplicações. Sua filosofia "Escreva uma vez, execute em qualquer lugar" permite que o código compilado rode em qualquer plataforma com uma Java Virtual Machine. É essencial para aplicações corporativas, Android, big data, back-end, serviços web e IoT, destacando-se por sua robustez, segurança e portabilidade.</p>
-                            <ul>
-                                <li>Programação Orientada a Objetos</li>
-                                <li>Collections Framework</li>
-                                <li>Spring Boot</li>
-                                <li>JPA/Hibernate</li>
-                            </ul>
+                        <div class="skill-details" data-skill="mysql">
+                            <h3>MySQL</h3>
+                            <div class="skill-description">
+                                <p>Sistema de gerenciamento de banco de dados relacional mais popular do mundo, utilizado para armazenamento e manipulação de dados em aplicações.</p>
+                                <ul>
+                                    <li>Modelagem de Dados</li>
+                                    <li>Queries Complexas</li>
+                                    <li>Stored Procedures</li>
+                                    <li>Otimização de Performance</li>
+                                </ul>
+                            </div>
                         </div>
-                    </div>
-                    <div class="skill-details" data-skill="git">
-                        <h3>Git & GitHub</h3>
-                        <div class="skill-description">
-                            <p>Controle de versão e colaboração em projetos de software. Gerenciamento eficiente de código-fonte, branches e resolução de conflitos, além de integração com ferramentas de CI/CD para desenvolvimento ágil.</p>
-                            <ul>
-                                <li>Controle de Versão Distribuído</li>
-                                <li>Branches e Merge Strategies</li>
-                                <li>Pull Requests e Code Review</li>
-                                <li>GitHub Actions e Workflows</li>
-                            </ul>
+                        <div class="skill-details" data-skill="react">
+                            <h3 data-lang-key="skills_section.react.title">React</h3>
+                            <div class="skill-description">
+                                <p> O React é uma biblioteca JavaScript declarativa, eficiente e flexível para criar interfaces com o usuário. Ele permite compor UIs complexas a partir de pequenos e isolados códigos chamados "componentes". Nós falaremos sobre formatos engraçados de tags que possuem formato de XML em breve</p>
+                                <ul>
+                                    <li>Componentes</li>
+                                    <li>JSX</li>
+                                    <li>Hooks</li>
+                                    <li>Context API</li>
+                                </ul>
+                            </div>
                         </div>
-                    </div>
-                    <div class="skill-details" data-skill="vscode">
-                        <h3>Visual Studio Code</h3>
-                        <div class="skill-description">
-                            <p>Editor de código altamente personalizável e poderoso, com suporte a diversas linguagens e extensões que aumentam a produtividade no desenvolvimento.</p>
-                            <ul>
-                                <li>Debugging Avançado</li>
-                                <li>Extensões e Personalização</li>
-                                <li>Integração com Git</li>
-                                <li>Terminal Integrado</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="skill-details" data-skill="mysql">
-                        <h3>MySQL</h3>
-                        <div class="skill-description">
-                            <p>Sistema de gerenciamento de banco de dados relacional mais popular do mundo, utilizado para armazenamento e manipulação de dados em aplicações.</p>
-                            <ul>
-                                <li>Modelagem de Dados</li>
-                                <li>Queries Complexas</li>
-                                <li>Stored Procedures</li>
-                                <li>Otimização de Performance</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="skill-details" data-skill="react">
-                        <h3 data-lang-key="skills_section.react.title">React</h3>
-                        <div class="skill-description">
-                            <p> O React é uma biblioteca JavaScript declarativa, eficiente e flexível para criar interfaces com o usuário. Ele permite compor UIs complexas a partir de pequenos e isolados códigos chamados “componentes”. Nós falaremos sobre formatos engraçados de tags que possuem formato de XML em breve</p>
-                            <ul>
-                                <li>Componentes</li>
-                                <li>JSX</li>
-                                <li>Hooks</li>
-                                <li>Context API</li>
-                            </ul>
+                        <div class="skill-details" data-skill="typescript">
+                            <h3 data-lang-key="skills_section.typescript.title">TypeScript</h3>
+                            <div class="skill-description">
+                                <p>TypeScript é um superset do JavaScript que adiciona tipagem estática opcional ao código. Ele permite a criação de aplicações mais robustas e escaláveis, detectando erros em tempo de desenvolvimento e melhorando a autocompletação e a refatoração de código.</p>
+                                <ul>
+                                    <li>Tipagem Estática</li>
+                                    <li>Interfaces e Tipos Genéricos</li>
+                                    <li>Decorators</li>
+                                    <li>Integração com JavaScript</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -404,5 +424,12 @@
     </footer>
 
     <script src="./Script/script.js"></script>
+    <style>
+        @media (max-width: 768px) {
+            .skills-thumbnails {
+                grid-template-columns: repeat(3, 1fr) !important;
+            }
+        }
+    </style>
 </body>
 </html>

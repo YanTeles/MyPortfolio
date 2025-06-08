@@ -106,6 +106,16 @@ const translations = {
                     'Context API'
                 ],
                 title: 'React'
+            },
+            typescript: {
+                title: 'TypeScript',
+                description: 'TypeScript é um superset do JavaScript que adiciona tipagem estática opcional ao código. Ele permite a criação de aplicações mais robustas e escaláveis, detectando erros em tempo de desenvolvimento e melhorando a autocompletação e a refatoração de código.',
+                items: [
+                    'Tipagem Estática',
+                    'Interfaces e Tipos Genéricos',
+                    'Decorators',
+                    'Integração com JavaScript'
+                ]
             }
         },
         footer: {
@@ -131,6 +141,16 @@ const translations = {
                     'Context API'
                 ],
                 title: 'React'
+            },
+            typescript: {
+                title: 'TypeScript',
+                description: 'TypeScript is a superset of JavaScript that adds optional static typing to the code. It enables the creation of more robust and scalable applications by catching errors during development and improving code completion and refactoring.',
+                items: [
+                    'Static Typing',
+                    'Interfaces and Generics',
+                    'Decorators',
+                    'JavaScript Integration'
+                ]
             }
         }
     },
@@ -240,6 +260,16 @@ const translations = {
                     'Context API'
                 ],
                 title: 'React'
+            },
+            typescript: {
+                title: 'TypeScript',
+                description: 'TypeScript is a superset of JavaScript that adds optional static typing to the code. It enables the creation of more robust and scalable applications by catching errors during development and improving code completion and refactoring.',
+                items: [
+                    'Static Typing',
+                    'Interfaces and Generics',
+                    'Decorators',
+                    'JavaScript Integration'
+                ]
             }
         },
         footer: {
@@ -265,6 +295,16 @@ const translations = {
                     'Context API'
                 ],
                 title: 'React'
+            },
+            typescript: {
+                title: 'TypeScript',
+                description: 'TypeScript is a superset of JavaScript that adds optional static typing to the code. It enables the creation of more robust and scalable applications by catching errors during development and improving code completion and refactoring.',
+                items: [
+                    'Static Typing',
+                    'Interfaces and Generics',
+                    'Decorators',
+                    'JavaScript Integration'
+                ]
             }
         }
     }
@@ -396,7 +436,7 @@ function setLanguage(lang) {
     document.querySelector('.section-title').textContent = translations[lang].skills_section.title;
     
     // Update skill descriptions and items
-    const skills = ['html', 'css', 'js', 'java', 'git', 'vscode', 'mysql', 'react'];
+    const skills = ['html', 'css', 'js', 'java', 'git', 'vscode', 'mysql', 'react', 'typescript'];
     skills.forEach(skill => {
         const skillDetails = document.querySelector(`.skill-details[data-skill="${skill}"]`);
         if (skillDetails) {
