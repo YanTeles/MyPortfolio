@@ -96,6 +96,16 @@ const translations = {
                     'Stored Procedures',
                     'Otimização de Performance'
                 ]
+            },
+            react: {
+                description: 'O React é uma biblioteca JavaScript declarativa, eficiente e flexível para criar interfaces com o usuário. Ele permite compor UIs complexas a partir de pequenos e isolados códigos chamados "componentes".',
+                items: [
+                    'Componentes',
+                    'JSX',
+                    'Hooks',
+                    'Context API'
+                ],
+                title: 'React'
             }
         },
         footer: {
@@ -111,7 +121,17 @@ const translations = {
             social: {
                 title: 'Redes Sociais'
             },
-            copyright: '© 2025 Yan Teles. Todos os direitos reservados.'
+            copyright: '© 2025 Yan Teles. Todos os direitos reservados.',
+            react: {
+                description: 'React is a declarative, efficient, and flexible JavaScript library for building user interfaces. It allows you to compose complex UIs from small, isolated pieces of code called "components".',
+                items: [
+                    'Components',
+                    'JSX',
+                    'Hooks',
+                    'Context API'
+                ],
+                title: 'React'
+            }
         }
     },
     en: {
@@ -210,6 +230,16 @@ const translations = {
                     'Stored Procedures',
                     'Performance Optimization'
                 ]
+            },
+            react: {
+                description: 'React is a declarative, efficient, and flexible JavaScript library for building user interfaces. It allows you to compose complex UIs from small, isolated pieces of code called "components".',
+                items: [
+                    'Components',
+                    'JSX',
+                    'Hooks',
+                    'Context API'
+                ],
+                title: 'React'
             }
         },
         footer: {
@@ -225,7 +255,17 @@ const translations = {
             social: {
                 title: 'Social Media'
             },
-            copyright: '© 2025 Yan Teles. All rights reserved.'
+            copyright: '© 2025 Yan Teles. All rights reserved.',
+            react: {
+                description: 'React is a declarative, efficient, and flexible JavaScript library for building user interfaces. It allows you to compose complex UIs from small, isolated pieces of code called "components".',
+                items: [
+                    'Components',
+                    'JSX',
+                    'Hooks',
+                    'Context API'
+                ],
+                title: 'React'
+            }
         }
     }
 };
@@ -356,13 +396,15 @@ function setLanguage(lang) {
     document.querySelector('.section-title').textContent = translations[lang].skills_section.title;
     
     // Update skill descriptions and items
-    const skills = ['html', 'css', 'js', 'java', 'git', 'vscode', 'mysql'];
+    const skills = ['html', 'css', 'js', 'java', 'git', 'vscode', 'mysql', 'react'];
     skills.forEach(skill => {
         const skillDetails = document.querySelector(`.skill-details[data-skill="${skill}"]`);
         if (skillDetails) {
             const description = skillDetails.querySelector('.skill-description p');
             const items = skillDetails.querySelectorAll('.skill-description ul li');
-            
+            const h3Title = skillDetails.querySelector('h3');
+
+            h3Title.textContent = translations[lang].skills_section[skill].title;
             description.textContent = translations[lang].skills_section[skill].description;
             items.forEach((item, index) => {
                 item.textContent = translations[lang].skills_section[skill].items[index];
