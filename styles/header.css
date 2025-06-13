@@ -41,6 +41,7 @@ nav {
     opacity: 0.8;
     display: inline-flex;
     align-items: center;
+    padding-bottom: 15px;
 }
 
 .menu h2:hover {
@@ -51,7 +52,7 @@ nav {
 .menu h2::after {
     content: '';
     position: absolute;
-    bottom: 0;
+    bottom: -5px;
     left: 50%;
     width: 0;
     height: 2px;
