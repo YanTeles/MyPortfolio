@@ -622,6 +622,11 @@ document.addEventListener('DOMContentLoaded', () => {
     spaceBackground.className = 'space-background';
     document.body.appendChild(spaceBackground);
 
+    // Função para verificar se é dispositivo móvel
+    function isMobile() {
+        return window.innerWidth <= 768;
+    }
+
     // Função para criar estrelas
     function createStar() {
         const star = document.createElement('div');
@@ -784,30 +789,35 @@ document.addEventListener('DOMContentLoaded', () => {
     // Função para inicializar elementos baseado no tema
     function initializeThemeElements() {
         const isLight = isLightTheme();
+        const mobile = isMobile();
         
         if (isLight) {
             clearDarkElements();
             createSun();
             
-            // Criar nuvens iniciais
-            for (let i = 0; i < 5; i++) {
+            // Criar nuvens iniciais (menos no mobile)
+            const cloudCount = mobile ? 3 : 5;
+            for (let i = 0; i < cloudCount; i++) {
                 createCloud();
             }
             
-            // Criar pássaros iniciais
-            for (let i = 0; i < 3; i++) {
+            // Criar pássaros iniciais (menos no mobile)
+            const birdCount = mobile ? 2 : 3;
+            for (let i = 0; i < birdCount; i++) {
                 setTimeout(() => createBird(), i * 2000);
             }
         } else {
             clearLightElements();
             
-            // Criar estrelas iniciais
-            for (let i = 0; i < 50; i++) {
+            // Criar estrelas iniciais (menos no mobile)
+            const starCount = mobile ? 25 : 50;
+            for (let i = 0; i < starCount; i++) {
                 createStar();
             }
             
-            // Criar nebulosas iniciais
-            for (let i = 0; i < 3; i++) {
+            // Criar nebulosas iniciais (menos no mobile)
+            const nebulaCount = mobile ? 2 : 3;
+            for (let i = 0; i < nebulaCount; i++) {
                 createNebula();
             }
         }
@@ -837,7 +847,8 @@ document.addEventListener('DOMContentLoaded', () => {
         attributeFilter: ['class']
     });
 
-    // Criar novos elementos periodicamente baseado no tema
+    // Criar novos elementos periodicamente baseado no tema (intervalos maiores no mobile)
+    const intervalTime = isMobile() ? 5000 : 3000;
     setInterval(() => {
         if (isLightTheme()) {
             createCloud();
@@ -847,19 +858,19 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             createStar();
         }
-    }, 3000);
+    }, intervalTime);
 
     setInterval(() => {
         if (!isLightTheme()) {
             createNebula();
         }
-    }, 15000);
+    }, isMobile() ? 20000 : 15000);
 
     setInterval(() => {
         if (!isLightTheme()) {
             createComet();
         }
-    }, 10000);
+    }, isMobile() ? 15000 : 10000);
 
     // Ajustar elementos quando a janela é redimensionada
     window.addEventListener('resize', () => {
