@@ -470,9 +470,12 @@ main img {
 /* Skills Section */
 .skills-section {
     padding: 5rem 2.5rem;
-    background-color: var(--surface);
+    background-color: rgba(0, 0, 0, 0.8);
     margin-top: 4rem;
     position: relative;
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .skills-container {
@@ -529,10 +532,10 @@ main img {
 .main-skill {
     width: 100%;
     aspect-ratio: 1;
-    background: var(--surface);
+    background: rgba(255, 255, 255, 0.1);
     border-radius: 20px;
     position: relative;
-    border: 2px solid rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.2);
 }
 
 .skill-content {
@@ -545,7 +548,7 @@ main img {
     transform: scale(0.9);
     transition: all 0.5s ease-in-out;
     padding: 2rem;
-    background: var(--surface);
+    background: rgba(255, 255, 255, 0.1);
     border-radius: 18px;
 }
 
@@ -601,10 +604,11 @@ main img {
 
 /* Skills Info Styles */
 .skills-info {
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(255, 255, 255, 0.1);
     border-radius: 20px;
     padding: 2rem;
     height: 100%;
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .skill-details {
@@ -875,8 +879,11 @@ main img {
 /* Projects Section */
 .projects-section {
     padding: 5rem 2.5rem;
-    background-color: var(--surface);
+    background-color: rgba(0, 0, 0, 0.8);
     margin-top: 4rem;
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .projects-container {
@@ -925,10 +932,11 @@ main img {
 }
 
 .project-card {
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(255, 255, 255, 0.1);
     border-radius: 15px;
     overflow: hidden;
     transition: transform 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .project-card:hover {

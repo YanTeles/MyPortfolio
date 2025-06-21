@@ -643,6 +643,60 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 30000);
     }
 
+    // Função para criar o sol (modo light)
+    function createSun() {
+        const sun = document.createElement('div');
+        sun.className = 'sun';
+        spaceBackground.appendChild(sun);
+    }
+
+    // Função para criar nuvens (modo light)
+    function createCloud() {
+        const cloud = document.createElement('div');
+        cloud.className = 'cloud';
+        
+        // Tamanhos aleatórios
+        const sizes = ['small', 'medium', 'large'];
+        const randomSize = sizes[Math.floor(Math.random() * sizes.length)];
+        cloud.classList.add(randomSize);
+        
+        // Posição aleatória
+        cloud.style.left = Math.random() * 100 + '%';
+        cloud.style.top = Math.random() * 60 + '%'; // Limitar ao topo da tela
+        
+        // Delay aleatório para animação
+        cloud.style.animationDelay = Math.random() * 5 + 's';
+        
+        spaceBackground.appendChild(cloud);
+        
+        // Remover nuvem após um tempo
+        setTimeout(() => {
+            if (cloud.parentNode) {
+                cloud.remove();
+            }
+        }, 45000);
+    }
+
+    // Função para criar pássaros (modo light)
+    function createBird() {
+        const bird = document.createElement('div');
+        bird.className = 'bird';
+        
+        // Posição inicial aleatória
+        const startY = Math.random() * (window.innerHeight * 0.6) + 50; // Limitar à parte superior
+        bird.style.top = startY + 'px';
+        bird.style.left = '-50px';
+        
+        spaceBackground.appendChild(bird);
+        
+        // Remover pássaro após a animação
+        setTimeout(() => {
+            if (bird.parentNode) {
+                bird.remove();
+            }
+        }, 8000);
+    }
+
     // Função para criar nebulosas
     function createNebula() {
         const nebula = document.createElement('div');
@@ -692,40 +746,119 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 8000);
     }
 
-    // Criar elementos iniciais
-    for (let i = 0; i < 50; i++) {
-        createStar();
-    }
-    
-    for (let i = 0; i < 3; i++) {
-        createNebula();
+    // Função para verificar o tema atual
+    function isLightTheme() {
+        // Se o body tem a classe 'dark', então é modo escuro (não é light)
+        const hasDarkClass = document.body.classList.contains('dark');
+        console.log('Body tem classe dark:', hasDarkClass);
+        return !hasDarkClass;
     }
 
-    // Criar novos elementos periodicamente
-    setInterval(createStar, 2000);
-    setInterval(createNebula, 15000);
-    setInterval(createComet, 10000);
+    // Função para limpar elementos do modo light
+    function clearLightElements() {
+        const suns = spaceBackground.querySelectorAll('.sun');
+        const clouds = spaceBackground.querySelectorAll('.cloud');
+        const birds = spaceBackground.querySelectorAll('.bird');
+        
+        suns.forEach(sun => sun.remove());
+        clouds.forEach(cloud => cloud.remove());
+        birds.forEach(bird => bird.remove());
+    }
+
+    // Função para limpar elementos do modo dark
+    function clearDarkElements() {
+        const stars = spaceBackground.querySelectorAll('.star');
+        const nebulosas = spaceBackground.querySelectorAll('.nebula');
+        const comets = spaceBackground.querySelectorAll('.comet');
+        
+        stars.forEach(star => star.remove());
+        nebulosas.forEach(nebula => nebula.remove());
+        comets.forEach(comet => comet.remove());
+    }
+
+    // Função para inicializar elementos baseado no tema
+    function initializeThemeElements() {
+        const isLight = isLightTheme();
+        console.log('Tema detectado:', isLight ? 'Light' : 'Dark');
+        console.log('Body classes:', document.body.classList.toString());
+        
+        if (isLight) {
+            clearDarkElements();
+            createSun();
+            
+            // Criar nuvens iniciais
+            for (let i = 0; i < 5; i++) {
+                createCloud();
+            }
+            
+            // Criar pássaros iniciais
+            for (let i = 0; i < 3; i++) {
+                setTimeout(() => createBird(), i * 2000);
+            }
+        } else {
+            clearLightElements();
+            
+            // Criar estrelas iniciais
+            for (let i = 0; i < 50; i++) {
+                createStar();
+            }
+            
+            // Criar nebulosas iniciais
+            for (let i = 0; i < 3; i++) {
+                createNebula();
+            }
+        }
+    }
+
+    // Inicializar elementos baseado no tema atual
+    initializeThemeElements();
+
+    // Observar mudanças no tema
+    const observer = new MutationObserver((mutations) => {
+        console.log('Mudança detectada no tema');
+        mutations.forEach(mutation => {
+            console.log('Mudança:', mutation.type, mutation.attributeName);
+        });
+        initializeThemeElements();
+    });
+
+    // Observar mudanças nas classes do body e html
+    observer.observe(document.body, {
+        attributes: true,
+        attributeFilter: ['class']
+    });
+    
+    observer.observe(document.documentElement, {
+        attributes: true,
+        attributeFilter: ['class']
+    });
+
+    // Criar novos elementos periodicamente baseado no tema
+    setInterval(() => {
+        if (isLightTheme()) {
+            createCloud();
+            if (Math.random() < 0.3) { // 30% de chance
+                createBird();
+            }
+        } else {
+            createStar();
+        }
+    }, 3000);
+
+    setInterval(() => {
+        if (!isLightTheme()) {
+            createNebula();
+        }
+    }, 15000);
+
+    setInterval(() => {
+        if (!isLightTheme()) {
+            createComet();
+        }
+    }, 10000);
 
     // Ajustar elementos quando a janela é redimensionada
     window.addEventListener('resize', () => {
-        // Recriar alguns elementos para se adaptar ao novo tamanho
-        const existingStars = spaceBackground.querySelectorAll('.star');
-        const existingNebulas = spaceBackground.querySelectorAll('.nebula');
-        
-        // Remover alguns elementos antigos
-        existingStars.forEach((star, index) => {
-            if (index % 2 === 0) star.remove();
-        });
-        
-        existingNebulas.forEach(nebula => nebula.remove());
-        
-        // Criar novos elementos
-        for (let i = 0; i < 25; i++) {
-            createStar();
-        }
-        
-        for (let i = 0; i < 2; i++) {
-            createNebula();
-        }
+        initializeThemeElements();
     });
 });
