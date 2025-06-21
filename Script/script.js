@@ -327,12 +327,55 @@ function initThemeAnimation() {
     });
 }
 
+// Função unificada para definir o tema
+function setTheme(theme) {
+    const isDark = theme === 'dark';
+    
+    // Aplicar tema ao root (para CSS custom properties)
+    if (isDark) {
+        root.classList.remove('light-theme');
+    } else {
+        root.classList.add('light-theme');
+    }
+    
+    // Aplicar tema ao body (para elementos visuais)
+    document.body.classList.toggle('dark', isDark);
+    
+    // Atualizar ícone do botão
+    const moonGroup = document.querySelector('.theme-sun');
+    const sunGroup = document.querySelector('.theme-moon');
+    
+    if (moonGroup && sunGroup) {
+        if (isDark) {
+            sunGroup.style.display = 'none';
+            moonGroup.style.display = 'block';
+        } else {
+            sunGroup.style.display = 'block';
+            moonGroup.style.display = 'none';
+        }
+    }
+    
+    // Disparar evento customizado para o cenário espacial
+    const event = new CustomEvent('themeChanged', { detail: { isDark } });
+    document.dispatchEvent(event);
+}
+
 // Load saved theme
 const savedTheme = localStorage.getItem('theme') || 'dark';
-setTheme(savedTheme);
+
+// Aplicar tema imediatamente se o DOM já estiver carregado
+if (document.readyState === 'loading') {
+    // Se o DOM ainda não carregou, aplicar quando carregar
+    document.addEventListener('DOMContentLoaded', () => {
+        setTheme(savedTheme);
+    });
+} else {
+    // Se o DOM já carregou, aplicar imediatamente
+    setTheme(savedTheme);
+}
 
 themeToggle.addEventListener('click', () => {
-    const currentTheme = root.classList.contains('light-theme') ? 'dark' : 'light';
+    const currentTheme = document.body.classList.contains('dark') ? 'light' : 'dark';
     
     // Play animation
     if (themeAnimation) {
@@ -348,44 +391,8 @@ themeToggle.addEventListener('click', () => {
     localStorage.setItem('theme', currentTheme);
 });
 
-function setTheme(theme) {
-    if (theme === 'light') {
-        root.classList.add('light-theme');
-    } else {
-        root.classList.remove('light-theme');
-    }
-}
-
 // Initialize theme animation when the page loads
 document.addEventListener('DOMContentLoaded', initThemeAnimation);
-
-// Animação SVG para dark/light mode
-document.addEventListener('DOMContentLoaded', function () {
-    var themeBtn = document.getElementById('themeToggle');
-    var moonGroup = document.querySelector('.theme-sun');
-    var sunGroup = document.querySelector('.theme-moon');
-    
-    function setTheme(isDark) {
-        document.body.classList.toggle('dark', isDark);
-        if (isDark) {
-            sunGroup.style.display = 'none';
-            moonGroup.style.display = 'block';
-        } else {
-            sunGroup.style.display = 'block';
-            moonGroup.style.display = 'none';
-        }
-        
-        // Disparar evento customizado para o cenário espacial
-        const event = new CustomEvent('themeChanged', { detail: { isDark } });
-        document.dispatchEvent(event);
-    }
-    
-    setTheme(document.body.classList.contains('dark'));
-    themeBtn && themeBtn.addEventListener('click', function () {
-        var isDark = !document.body.classList.contains('dark');
-        setTheme(isDark);
-    });
-});
 
 // Language handling
 const langToggle = document.getElementById('langToggle');

@@ -493,7 +493,7 @@ main img {
 }
 
 :root.light-theme .section-title {
-    color: #1a1a1a;
+    color: #FFFFFF;
 }
 
 :root.light-theme .section-title::after {
@@ -655,6 +655,16 @@ main img {
     content: '▹';
     position: absolute;
     left: 0;
+    color: var(--highlights);
+}
+
+/* Manter texto das skills branco no light mode */
+:root.light-theme .skill-description p,
+:root.light-theme .skill-description li {
+    color: #FFFFFF;
+}
+
+:root.light-theme .skill-details h3 {
     color: var(--highlights);
 }
 
@@ -1035,6 +1045,15 @@ main img {
 :root.light-theme .project-info h3,
 :root.light-theme .project-info p,
 :root.light-theme .project-tech span {
+    color: #FFFFFF;
+}
+
+/* Manter texto da seção de projetos branco no light mode */
+:root.light-theme .section-description {
+    color: #FFFFFF;
+}
+
+:root.light-theme .category-btn {
     color: #FFFFFF;
 }
 
