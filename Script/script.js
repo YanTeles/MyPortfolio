@@ -364,6 +364,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var themeBtn = document.getElementById('themeToggle');
     var moonGroup = document.querySelector('.theme-sun');
     var sunGroup = document.querySelector('.theme-moon');
+    
     function setTheme(isDark) {
         document.body.classList.toggle('dark', isDark);
         if (isDark) {
@@ -373,7 +374,12 @@ document.addEventListener('DOMContentLoaded', function () {
             sunGroup.style.display = 'block';
             moonGroup.style.display = 'none';
         }
+        
+        // Disparar evento customizado para o cenário espacial
+        const event = new CustomEvent('themeChanged', { detail: { isDark } });
+        document.dispatchEvent(event);
     }
+    
     setTheme(document.body.classList.contains('dark'));
     themeBtn && themeBtn.addEventListener('click', function () {
         var isDark = !document.body.classList.contains('dark');
@@ -750,7 +756,6 @@ document.addEventListener('DOMContentLoaded', () => {
     function isLightTheme() {
         // Se o body tem a classe 'dark', então é modo escuro (não é light)
         const hasDarkClass = document.body.classList.contains('dark');
-        console.log('Body tem classe dark:', hasDarkClass);
         return !hasDarkClass;
     }
 
@@ -779,8 +784,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // Função para inicializar elementos baseado no tema
     function initializeThemeElements() {
         const isLight = isLightTheme();
-        console.log('Tema detectado:', isLight ? 'Light' : 'Dark');
-        console.log('Body classes:', document.body.classList.toString());
         
         if (isLight) {
             clearDarkElements();
@@ -813,12 +816,13 @@ document.addEventListener('DOMContentLoaded', () => {
     // Inicializar elementos baseado no tema atual
     initializeThemeElements();
 
-    // Observar mudanças no tema
-    const observer = new MutationObserver((mutations) => {
-        console.log('Mudança detectada no tema');
-        mutations.forEach(mutation => {
-            console.log('Mudança:', mutation.type, mutation.attributeName);
-        });
+    // Escutar evento de mudança de tema
+    document.addEventListener('themeChanged', (event) => {
+        initializeThemeElements();
+    });
+
+    // Observar mudanças no tema como fallback
+    const observer = new MutationObserver(() => {
         initializeThemeElements();
     });
 
