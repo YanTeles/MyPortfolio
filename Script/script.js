@@ -608,3 +608,124 @@ document.addEventListener('DOMContentLoaded', () => {
         updateSkill(newIndex);
     });
 });
+
+// Efeito de fundo espacial
+document.addEventListener('DOMContentLoaded', () => {
+    // Criar o fundo espacial
+    const spaceBackground = document.createElement('div');
+    spaceBackground.className = 'space-background';
+    document.body.appendChild(spaceBackground);
+
+    // Função para criar estrelas
+    function createStar() {
+        const star = document.createElement('div');
+        star.className = 'star';
+        
+        // Tamanhos aleatórios
+        const sizes = ['small', 'medium', 'large'];
+        const randomSize = sizes[Math.floor(Math.random() * sizes.length)];
+        star.classList.add(randomSize);
+        
+        // Posição aleatória
+        star.style.left = Math.random() * 100 + '%';
+        star.style.top = Math.random() * 100 + '%';
+        
+        // Delay aleatório para animação
+        star.style.animationDelay = Math.random() * 3 + 's';
+        
+        spaceBackground.appendChild(star);
+        
+        // Remover estrela após um tempo para otimizar performance
+        setTimeout(() => {
+            if (star.parentNode) {
+                star.remove();
+            }
+        }, 30000);
+    }
+
+    // Função para criar nebulosas
+    function createNebula() {
+        const nebula = document.createElement('div');
+        nebula.className = 'nebula';
+        
+        // Cores aleatórias
+        const colors = ['purple', 'blue', 'pink'];
+        const randomColor = colors[Math.floor(Math.random() * colors.length)];
+        nebula.classList.add(randomColor);
+        
+        // Tamanho aleatório
+        const size = Math.random() * 200 + 100;
+        nebula.style.width = size + 'px';
+        nebula.style.height = size + 'px';
+        
+        // Posição aleatória
+        nebula.style.left = Math.random() * 100 + '%';
+        nebula.style.top = Math.random() * 100 + '%';
+        
+        spaceBackground.appendChild(nebula);
+        
+        // Remover nebulosa após um tempo
+        setTimeout(() => {
+            if (nebula.parentNode) {
+                nebula.remove();
+            }
+        }, 40000);
+    }
+
+    // Função para criar cometas
+    function createComet() {
+        const comet = document.createElement('div');
+        comet.className = 'comet';
+        
+        // Posição inicial aleatória
+        const startY = Math.random() * window.innerHeight;
+        comet.style.top = startY + 'px';
+        comet.style.left = '-100px';
+        
+        spaceBackground.appendChild(comet);
+        
+        // Remover cometa após a animação
+        setTimeout(() => {
+            if (comet.parentNode) {
+                comet.remove();
+            }
+        }, 8000);
+    }
+
+    // Criar elementos iniciais
+    for (let i = 0; i < 50; i++) {
+        createStar();
+    }
+    
+    for (let i = 0; i < 3; i++) {
+        createNebula();
+    }
+
+    // Criar novos elementos periodicamente
+    setInterval(createStar, 2000);
+    setInterval(createNebula, 15000);
+    setInterval(createComet, 10000);
+
+    // Ajustar elementos quando a janela é redimensionada
+    window.addEventListener('resize', () => {
+        // Recriar alguns elementos para se adaptar ao novo tamanho
+        const existingStars = spaceBackground.querySelectorAll('.star');
+        const existingNebulas = spaceBackground.querySelectorAll('.nebula');
+        
+        // Remover alguns elementos antigos
+        existingStars.forEach((star, index) => {
+            if (index % 2 === 0) star.remove();
+        });
+        
+        existingNebulas.forEach(nebula => nebula.remove());
+        
+        // Criar novos elementos
+        for (let i = 0; i < 25; i++) {
+            createStar();
+        }
+        
+        for (let i = 0; i < 2; i++) {
+            createNebula();
+        }
+    });
+});
