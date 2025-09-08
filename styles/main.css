@@ -1438,3 +1438,16 @@ main img {
     }
 }
 
+.left-content p {
+    background: rgba(20, 20, 20, 0.6); /* fundo escuro translúcido */
+    border-radius: 10px;
+    padding: 1rem 1.5rem;
+    backdrop-filter: blur(2px);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+:root.light-theme .left-content p {
+    background: rgba(30, 41, 59, 0.7); /* fundo escuro mais visível no light mode */
+    color: #fff;
+}
+
